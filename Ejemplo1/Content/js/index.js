@@ -9,7 +9,7 @@ $(function(){
                     '#6294c9', '#59bc79'
                 ]);
 
-            chart.legend.margin({top: 3});
+            chart.legend.margin({top: 2});
 
             chart.yAxis
                 .showMaxMin(false)
@@ -17,12 +17,12 @@ $(function(){
 
             chart.xAxis
                 .showMaxMin(false)
-                .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)) });
-            var data = testData(['Unique', 'Visits'], 30);
-            data[0].area = true;
+                .tickFormat(function (d) { return d3.time.format('%d %b')(new Date(d)) });
+            var data = testData(['Valvula 1', 'Valvula 2'], 500);
+            data[0].area = false;
             d3.select('#visits-chart svg')
                 .datum(data)
-                .transition().duration(500)
+                .transition().duration(5000)
                 .call(chart);
 
             PjaxApp.onResize(chart.update);
