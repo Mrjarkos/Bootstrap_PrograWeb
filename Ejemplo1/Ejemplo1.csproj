@@ -1573,6 +1573,7 @@
     <Content Include="Views\User\Modify.cshtml" />
     <Content Include="Views\User\Load.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Cuenta_nueva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

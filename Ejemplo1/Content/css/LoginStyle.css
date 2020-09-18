@@ -18,10 +18,10 @@ html, body {
 }
 
 .card {
-    height: 370px;
+    height: 600px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
+    width: 600px;
     background-color: #303d50;
 }
 

@@ -38,14 +38,7 @@
         </li>
         </li>*@
             <li class="panel ">
-                <a class="accordion-toggle collapsed" data-toggle="collapse"
-                   data-parent="#side-nav" href="#elements-collapse"><i class="fa fa-magic"></i> <span class="name">Usuarios</span></a>
-                <ul id="elements-collapse" class="panel-collapse collapse ">
-                    <li class=""><a href="/User/Load">Listar</a></li>
-                    <li class=""><a href="/User/Add">Añadir</a></li>
-                    <li class=""><a href="/User/Modify">Editar</a></li>
-                    <li class=""><a href="/User/Delete">Eliminar</a></li>
-                </ul>
+                <a href="/User/Load"><i class="fa fa-magic"></i> <span class="name">Usuarios</span></a>
             </li>
         </ul>
 
@@ -222,7 +215,7 @@
                         <ul id="account-menu" class="dropdown-menu account" role="menu">
                             <li role="presentation" class="account-picture">
                                 <img src="~/Content/img/2.png" alt="">
-                                Alberto Cabuya
+                                @ViewBag.User
                             </li>
                             <li role="presentation">
                                 <a href="form_account.html" class="link">
@@ -253,7 +246,7 @@
                             <i class="fa fa-bars"></i>
                         </a>
                     </li>
-                    <li class="hidden-xs"><a href="login.html"><i class="glyphicon glyphicon-off"></i></a></li>
+                    <li class="hidden-xs"><a href="/Login/Login"><i class="glyphicon glyphicon-off"></i></a></li>
                 </ul>
                 <form id="search-form" class="navbar-form pull-right" role="search">
                     <input type="search" class="form-control search-query" placeholder="Buscar">

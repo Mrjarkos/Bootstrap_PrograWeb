@@ -23,6 +23,21 @@
     <link rel="stylesheet" type="text/css" href="~/Content/css/LoginStyle.css">
 </head>
 <body>
+    @if (ViewBag.mensaje != null)
+    {
+        if (ViewBag.error)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.mensaje
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success">
+                @ViewBag.mensaje
+            </div>
+        }
+    }
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
@@ -59,7 +74,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        No tienes cuenta?<a href="/Login/Cuenta_nueva">Crea una nueva</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#">Forgot your password?</a>
