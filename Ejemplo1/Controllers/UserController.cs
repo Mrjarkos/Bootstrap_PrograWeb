@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,29 @@ namespace Ejemplo1.Controllers
 
         public ActionResult Load()
         {
-            return View();
+            var modelo = new Models.UsuarioView();
+            modelo.usuarios = new List<Models.Usuario>();
+
+            using (var context = new Datos.DatosEntities())
+            {
+                var us = context.USUARIOS.ToArray();
+                foreach (var u in us)
+                {
+                    modelo.usuarios.Add(new Models.Usuario
+                    {
+                        NOMBRE = u.NOMBRE,
+                        CORREO = u.CORREO,
+                        DOCUMENTO = u.DOCUMENTO,
+                        DOC_TYPE = u.DOC_TYPE,
+                        ID = u.ID,
+                        ROL = u.ROL,
+                        PASSWORD = u.PASSWORD
+                    });
+                }
+            }
+
+            var r = View(modelo);
+            return r;
         }
 
         public ActionResult Modify()
@@ -38,16 +61,28 @@ namespace Ejemplo1.Controllers
                 ViewBag.error = false;
                 if (ModelState.IsValid)
                 {
-                    Datos.Interfaces.clsUsuario admin = new Datos.Interfaces.clsUsuario();
-                    admin.Insertar(new Datos.USUARIO {
-                        PASSWORD=usuario.PASSWORD,
-                        CORREO = usuario.CORREO,
-                        DOCUMENTO = usuario.DOCUMENTO,
-                        DOC_TYPE = usuario.DOC_TYPE,
-                        NOMBRE = usuario.NOMBRE,
-                        ROL = usuario.ROL, 
-                        ID = usuario.ID
-                    });
+                    using (var context = new DatosEntities()) {
+                        context.USUARIOS.Add(new USUARIO { 
+                            NOMBRE = usuario.NOMBRE,
+                            PASSWORD = usuario.PASSWORD,
+                            CORREO = usuario.CORREO,
+                            DOCUMENTO = usuario.DOCUMENTO,
+                            DOC_TYPE = usuario.DOC_TYPE,
+                            ROL = usuario.ROL,
+                        });
+                        context.SaveChanges();
+                    }
+                    //Datos.Interfaces.clsUsuario admin = new Datos.Interfaces.clsUsuario();
+                    //admin.Insertar(new Datos.USUARIO {
+                    //    PASSWORD=usuario.PASSWORD,
+                    //    CORREO = usuario.CORREO,
+                    //    DOCUMENTO = usuario.DOCUMENTO,
+                    //    DOC_TYPE = usuario.DOC_TYPE,
+                    //    NOMBRE = usuario.NOMBRE,
+                    //    ROL = usuario.ROL, 
+                    //    ID = usuario.ID
+                    //});
+
                     ViewBag.mensaje = "Usuario guardado exitosamente";
                 }
                 else {
