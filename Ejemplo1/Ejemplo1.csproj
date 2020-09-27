@@ -1462,6 +1462,7 @@
     <Content Include="Content\css\fonts\google\open-sans-light.woff" />
     <Content Include="Content\css\fonts\google\open-sans-semibold.woff" />
     <Content Include="Content\css\fonts\google\open-sans.woff" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

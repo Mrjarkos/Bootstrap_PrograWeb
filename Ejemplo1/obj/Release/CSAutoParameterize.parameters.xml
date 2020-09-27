@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DatosEntities-Web.config Connection String" description="DatosEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Datos.csdl|res://*/Datos.ssdl|res://*/Datos.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=JAVIERC\SQLEXPRESS;initial catalog=PrograWeb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Universidad\\8\ SEMESTRE\\Programación\ Web\\Laboratorios\\Bootstrap_PrograWeb\\Ejemplo1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DatosEntities']/@connectionString" />
+  </parameter>
+</parameters>

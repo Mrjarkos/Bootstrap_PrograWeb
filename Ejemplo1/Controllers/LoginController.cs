@@ -66,7 +66,7 @@ namespace Ejemplo1.Controllers
                     ViewBag.error = true;
                     ViewBag.mensaje = "Error:" + ex.Message.ToString();
                 }
-                return View();
+                return View("Login");
         }
 
         [HttpPost]
