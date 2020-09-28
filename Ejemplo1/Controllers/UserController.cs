@@ -20,25 +20,31 @@ namespace Ejemplo1.Controllers
         {
             var modelo = new Models.UsuarioView();
             modelo.usuarios = new List<Models.Usuario>();
-
-            using (var context = new Datos.DatosEntities())
+            try
             {
-                var us = context.USUARIOS.ToArray();
-                foreach (var u in us)
+                using (var context = new Datos.DatosEntities())
                 {
-                    modelo.usuarios.Add(new Models.Usuario
+                    var us = context.USUARIOS.ToArray();
+                    foreach (var u in us)
                     {
-                        NOMBRE = u.NOMBRE,
-                        CORREO = u.CORREO,
-                        DOCUMENTO = u.DOCUMENTO,
-                        DOC_TYPE = u.DOC_TYPE,
-                        ID = u.ID,
-                        ROL = u.ROL,
-                        PASSWORD = u.PASSWORD
-                    });
+                        modelo.usuarios.Add(new Models.Usuario
+                        {
+                            NOMBRE = u.NOMBRE,
+                            CORREO = u.CORREO,
+                            DOCUMENTO = u.DOCUMENTO,
+                            DOC_TYPE = u.DOC_TYPE,
+                            ID = u.ID,
+                            ROL = u.ROL,
+                            PASSWORD = u.PASSWORD
+                        });
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                ViewBag.error = true;
+                ViewBag.mensaje = "Error:" + ex.Message.ToString();
+            }
             var r = View(modelo);
             return r;
         }
@@ -116,23 +122,6 @@ namespace Ejemplo1.Controllers
                 {
                     using (var context = new Datos.DatosEntities())
                     {
-                        USUARIO user_ant = (from q in context.USUARIOS
-                                            where q.ID == id
-                                            select q).First();
-
-                        //context.USUARIOS.Remove(user_ant);
-                        //context.USUARIOS.Add(new USUARIO
-                        //{
-                        //    ID = id,
-                        //    NOMBRE = usuario.NOMBRE,
-                        //    PASSWORD = usuario.PASSWORD,
-                        //    CORREO = usuario.CORREO,
-                        //    DOCUMENTO = usuario.DOCUMENTO,
-                        //    DOC_TYPE = usuario.DOC_TYPE,
-                        //    ROL = usuario.ROL,
-                        //});
-
-
                         var u = context.USUARIOS.SingleOrDefault(b => b.ID ==id);
                         if (u != null)
                         {

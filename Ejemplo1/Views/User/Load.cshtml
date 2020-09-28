@@ -9,6 +9,22 @@
     <a class="btn btn-lg btn-success" href="/User/Add" role="button">Crear</a>
 </section>
 
+@if (ViewBag.mensaje != null)
+{
+    if (ViewBag.error)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.mensaje
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success">
+            @ViewBag.mensaje
+        </div>
+    }
+}
+
 <section class="widget">
     <header>
         <h4>
@@ -37,28 +53,28 @@
             <tbody>
                 @foreach (var a in Model.usuarios)
                 {
-                <tr>
+                    <tr>
 
-                    <td>@a.ID</td>
-                    <td>@a.NOMBRE</td>
-                    <td>@a.DOC_TYPE</td>
-                    <td>@a.DOCUMENTO</td>
-                    <td>@a.CORREO</td>
-                    <td>@a.ROL</td>
-                    <td>
-                        @*<a class="btn btn-warning glyphicon glyphicon-pencil" href="/User/Modify" role="button" id=@a.NOMBRE></a>*@
-                        <form action="/User/Modify" method="post">
-                            <input class="btn btn-warning glyphicon glyphicon-pencil" type="submit" id=@a.ID.ToString() value=@a.ID.ToString()  name="id"/>
-                            <input type="text" hidden value="0" name="flag">
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/User/Delete" method="post">
-                            <input class="btn btn-danger glyphicon glyphicon-pencil" type="submit" id=@a.ID.ToString() value=@a.ID.ToString() name="id" />
-                            <input type="text" hidden value="0" name="flag">
-                        </form>
-                    </td>
-                </tr>
+                        <td>@a.ID</td>
+                        <td>@a.NOMBRE</td>
+                        <td>@a.DOC_TYPE</td>
+                        <td>@a.DOCUMENTO</td>
+                        <td>@a.CORREO</td>
+                        <td>@a.ROL</td>
+                        <td>
+                            @*<a class="btn btn-warning glyphicon glyphicon-pencil" href="/User/Modify" role="button" id=@a.NOMBRE></a>*@
+                            <form action="/User/Modify" method="post">
+                                <input class="btn btn-warning glyphicon glyphicon-pencil" type="submit" id=@a.ID.ToString() value=@a.ID.ToString() name="id" />
+                                <input type="text" hidden value="0" name="flag">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/User/Delete" method="post">
+                                <input class="btn btn-danger glyphicon glyphicon-pencil" type="submit" id=@a.ID.ToString() value=@a.ID.ToString() name="id" />
+                                <input type="text" hidden value="0" name="flag">
+                            </form>
+                        </td>
+                    </tr>
                     <script>
                         var id = id + 1;
                         var ID = id.toString();
@@ -70,32 +86,32 @@
 </section>
 
 @*<script>
-    var id = 0;
-    var ID = id.toString();
+        var id = 0;
+        var ID = id.toString();
 
-    function checkclick() {
-        // Get the checkbox
-        @{
-            Model.id_checks = new List<int>();
-        }
-        for (var i = 0; i < id; i++) {
-            var checkBox = document.getElementById(i.toString());
-
-            // If the checkbox is checked, display the output text
-            if (checkBox.checked == true) {
-                @{
-                    Model.id_checks.Add(1);
-                 }
+        function checkclick() {
+            // Get the checkbox
+            @{
+                Model.id_checks = new List<int>();
             }
-            else {
-                @{
-                    Model.id_checks.Add(0);
-                 }
+            for (var i = 0; i < id; i++) {
+                var checkBox = document.getElementById(i.toString());
+
+                // If the checkbox is checked, display the output text
+                if (checkBox.checked == true) {
+                    @{
+                        Model.id_checks.Add(1);
+                     }
+                }
+                else {
+                    @{
+                        Model.id_checks.Add(0);
+                     }
+                }
             }
         }
-    }
 
-</script>*@
+    </script>*@
 
 <script type="text/javascript">
     $(document).ready(function () {

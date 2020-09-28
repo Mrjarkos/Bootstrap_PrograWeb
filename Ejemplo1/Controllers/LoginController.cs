@@ -53,7 +53,6 @@ namespace Ejemplo1.Controllers
                                                         NOMBRE = usuario.NOMBRE,
                                                         PASSWORD = usuario.PASSWORD};
                         ViewBag.User = user.NOMBRE;
-                    return RedirectToAction("Index", "Home");
                     }
                     else
                     {
@@ -66,7 +65,14 @@ namespace Ejemplo1.Controllers
                     ViewBag.error = true;
                     ViewBag.mensaje = "Error:" + ex.Message.ToString();
                 }
+            if (ViewBag.error)
+            {
+                return View("Cuenta_nueva");
+            }
+            else {
                 return View("Login");
+            }
+                
         }
 
         [HttpPost]
