@@ -14,5 +14,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SensorDevice">
+      <EntityTypeMapping TypeName="DatosModel.SensorDevice">
+        <MappingFragment StoreEntitySet="SensorDevice">
+          <ScalarProperty Name="FECHAYHORA" ColumnName="FECHAYHORA" />
+          <ScalarProperty Name="MEDICION" ColumnName="MEDICION" />
+          <ScalarProperty Name="ID_SENSOR" ColumnName="ID_SENSOR" />
+          <ScalarProperty Name="ID_REG" ColumnName="ID_REG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

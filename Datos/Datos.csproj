@@ -81,6 +81,9 @@
       <DependentUpon>Datos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SensorDevice.cs">
+      <DependentUpon>Datos.tt</DependentUpon>
+    </Compile>
     <Compile Include="USUARIO.cs">
       <DependentUpon>Datos.tt</DependentUpon>
     </Compile>

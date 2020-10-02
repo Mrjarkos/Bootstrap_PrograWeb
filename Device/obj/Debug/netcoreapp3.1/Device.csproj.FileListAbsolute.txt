@@ -1,0 +1,13 @@
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.exe
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.deps.json
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.runtimeconfig.json
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.runtimeconfig.dev.json
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.dll
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\bin\Debug\netcoreapp3.1\Device.pdb
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.csprojAssemblyReference.cache
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.AssemblyInfoInputs.cache
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.AssemblyInfo.cs
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.csproj.CoreCompileInputs.cache
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.dll
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.pdb
+C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Device\obj\Debug\netcoreapp3.1\Device.genruntimeconfig.cache
