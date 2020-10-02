@@ -8,22 +8,14 @@ namespace Sensor
     {
         static void Main(string[] args)
         {
-            var host = "localhost";
-            int port = 19374;
             while (true)
             {
                 string GH = " ";
                 Console.WriteLine("Listo....");
                 Console.ReadKey();
-                GH=GETMessage(host, port);
-                if (GH!=" ")
-                {
-                    PUTMessage(GH, host, port);
-                }
-                else
-                {
-                    Console.WriteLine("Error de conexion intente de nuevo");
-                }
+                GH=GETMessage();
+                if (GH!=" "){ PUTMessage(GH);}
+                else {Console.WriteLine("Error de conexion intente de nuevo");}
                 
                 Console.ReadKey();
             }
@@ -44,7 +36,7 @@ namespace Sensor
         }
 
 
-        static string GETMessage(string host, int port)
+        static string GETMessage()
         {
             string FYH = " ";
             try
@@ -53,9 +45,9 @@ namespace Sensor
                 //connect
                 var client = new System.Net.Sockets.TcpClient();
                 //Send
-                client.Connect(host, port);
+                client.Connect("williamap-001-site1.itempurl.com",80);
                 string MessageS = "GET /Device/GetDateTime/99 HTTP/1.1\r\n" +
-                "Host:"+ host+":"+port.ToString()+"\r\n" + 
+                "Host:williamap-001-site1.itempurl.com:80\r\n" + 
                 "\r\n";
 
 
@@ -73,7 +65,10 @@ namespace Sensor
                     var Mensaje = responce.Split(new string[] { "\r\n\r\n" }, StringSplitOptions.None);
                     var body = Mensaje[1];
                     Analisis(responce);
-                    FYH = body;
+                    DateTime dt = DateTime.ParseExact(body,"yyyy-MM-dd HH:mm:ss", null);
+                    DateTime dt2 = dt.AddHours(2);
+                    FYH = dt2.ToString("yyyy-MM-dd HH:mm:ss");
+                    
                     Console.WriteLine("FYH:"+FYH+ "\r\n");
                 }
                 else
@@ -95,7 +90,7 @@ namespace Sensor
             return FYH;
         }
 
-        static void PUTMessage(string Date, string host, int port)
+        static void PUTMessage(string Date)
         {
             try
             {
@@ -111,9 +106,9 @@ namespace Sensor
                 //connect
                 var client = new System.Net.Sockets.TcpClient();
                 //Send
-                client.Connect(host, port);
+                client.Connect("williamap-001-site1.itempurl.com", 80);
                 string MessageS = "PUT /Device/PutData/99 HTTP/1.1\r\n" +
-                "Host:"+host+":"+port.ToString()+"\r\n" +
+                "Host: williamap-001-site1.itempurl.com:80\r\n" +
                 "Content-Type: application/x-www-form-urlencoded\r\n" +
                 "Content-Length:" + Variable.Length.ToString() + "\r\n" +
                 "\r\n" + Variable;
