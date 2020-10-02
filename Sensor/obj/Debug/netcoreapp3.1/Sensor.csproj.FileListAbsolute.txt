@@ -11,3 +11,16 @@ C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Sensor\obj\Debug\netcor
 C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.pdb
 C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.genruntimeconfig.cache
 C:\Users\willi\source\repos\Mrjarkos\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.csprojAssemblyReference.cache
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.exe
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.deps.json
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.runtimeconfig.json
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.runtimeconfig.dev.json
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.dll
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\bin\Debug\netcoreapp3.1\Sensor.pdb
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.csprojAssemblyReference.cache
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.AssemblyInfoInputs.cache
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.AssemblyInfo.cs
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.csproj.CoreCompileInputs.cache
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.dll
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.pdb
+D:\Universidad\8 SEMESTRE\Programación Web\Laboratorios\Bootstrap_PrograWeb\Sensor\obj\Debug\netcoreapp3.1\Sensor.genruntimeconfig.cache

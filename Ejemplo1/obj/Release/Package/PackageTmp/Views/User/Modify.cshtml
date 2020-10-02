@@ -29,6 +29,10 @@
     else
     {
         <form action="/User/Modificar" method="post">
+            
+            <input type="hidden" class="form-control is-invalid" id="ID" name="ID" value=@Model.ID>
+            
+
             <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" class="form-control is-invalid" id="NOMBRE" name="NOMBRE" placeholder="Introduzca su Nombre de Usuario" value=@Model.NOMBRE>

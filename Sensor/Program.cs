@@ -8,15 +8,17 @@ namespace Sensor
     {
         static void Main(string[] args)
         {
+            var host = "localhost";
+            int port = 19374;
             while (true)
             {
                 string GH = " ";
                 Console.WriteLine("Listo....");
                 Console.ReadKey();
-                GH=GETMessage();
+                GH=GETMessage(host, port);
                 if (GH!=" ")
                 {
-                    PUTMessage(GH);
+                    PUTMessage(GH, host, port);
                 }
                 else
                 {
@@ -42,7 +44,7 @@ namespace Sensor
         }
 
 
-        static string GETMessage()
+        static string GETMessage(string host, int port)
         {
             string FYH = " ";
             try
@@ -51,9 +53,9 @@ namespace Sensor
                 //connect
                 var client = new System.Net.Sockets.TcpClient();
                 //Send
-                client.Connect("localhost", 19374);
+                client.Connect(host, port);
                 string MessageS = "GET /Device/GetDateTime/99 HTTP/1.1\r\n" +
-                "Host:localhost:19374\r\n" + 
+                "Host:"+ host+":"+port.ToString()+"\r\n" + 
                 "\r\n";
 
 
@@ -93,7 +95,7 @@ namespace Sensor
             return FYH;
         }
 
-        static void PUTMessage(string Date)
+        static void PUTMessage(string Date, string host, int port)
         {
             try
             {
@@ -109,9 +111,9 @@ namespace Sensor
                 //connect
                 var client = new System.Net.Sockets.TcpClient();
                 //Send
-                client.Connect("localhost", 19374);
+                client.Connect(host, port);
                 string MessageS = "PUT /Device/PutData/99 HTTP/1.1\r\n" +
-                "Host: localhost:19374\r\n" +
+                "Host:"+host+":"+port.ToString()+"\r\n" +
                 "Content-Type: application/x-www-form-urlencoded\r\n" +
                 "Content-Length:" + Variable.Length.ToString() + "\r\n" +
                 "\r\n" + Variable;

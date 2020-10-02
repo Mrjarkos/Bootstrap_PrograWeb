@@ -14,7 +14,33 @@ namespace Ejemplo1.Controllers
 
         public ActionResult ShowRegister()
         {
-            return View();
+            var modelo = new Models.DeviceView();
+            modelo.sensores = new List<Models.Device>();
+            ViewBag.error = false;
+            try
+            {
+                using (var context = new Datos.DatosEntities())
+                {
+                    var us = context.SensorDevice.ToArray();
+                    foreach (var u in us)
+                    {
+                        modelo.sensores.Add(new Models.Device
+                        {
+                            ID_REG = u.ID_REG,
+                            ID_SENSOR = u.ID_SENSOR,
+                            MEDICION = (float)u.MEDICION,
+                            FECHAYHORA = DateTime.Parse(u.FECHAYHORA)
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = true;
+                ViewBag.mensaje = "Error:" + ex.Message.ToString();
+            }
+            var r = View(modelo);
+            return r;
         }
 
         public string GetDateTime(int id)
